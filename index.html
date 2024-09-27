@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramsey Number Visualization | DOAA Course Project</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Ramsey Number Visualization</h1>
+        <h2>DOAA Course Project, made by TY CA A Group 5</h2>
+
+        <!-- Choose Feature -->
+        <div id="chooseFeature">
+            <h3>Choose a feature:</h3>
+            <button id="btnCalculator">Interactive Ramsey Number Calculator</button>
+            <button id="btnGraph">Generate Graph</button>
+            <button id="btnTheory">Understanding Ramsey Theory</button>
+        </div>
+
+        <!-- Interactive Ramsey Number Calculator -->
+        <div id="calculator" style="display: none;">
+            <h2>Interactive Ramsey Number Calculator</h2>
+            <label for="rValue">Enter r (Red):</label>
+            <input type="number" id="rValue" min="1" value="2">
+            <label for="kValue">Enter k (Blue):</label>
+            <input type="number" id="kValue" min="1" value="2">
+            <button id="calculateRamsey">Calculate R(r, k)</button>
+            <p id="ramseyResult"></p>
+        </div>
+
+        <!-- Graph Generation -->
+        <div id="graphContainer" style="display: none;">
+            <h2>Ramsey Graph Visualization</h2>
+            <div class="input-group">
+                <label for="redCount">Number of Red Edges:</label>
+                <input type="number" id="redCount" min="0" value="3">
+            </div>
+            <div class="input-group">
+                <label for="blueCount">Number of Blue Edges:</label>
+                <input type="number" id="blueCount" min="0" value="3">
+            </div>
+            <div class="input-group">
+                <label for="graphType">Graph Type:</label>
+                <select id="graphType">
+                    <option value="closed">Closed Structure</option>
+                    <option value="open">Open Structure</option>
+                </select>
+            </div>
+            <button id="generateGraph">Generate Graph</button>
+            <div id="graphCanvas"></div>
+        </div>
+
+        <!-- Understanding Ramsey Theory -->
+        <div id="theory" style="display: none;">
+            <h2>Understanding Ramsey Theory</h2>
+            <p>Ramsey theory is a branch of combinatorial mathematics that studies conditions under which a certain order must appear. It is primarily concerned with finding guaranteed structures within large sets or graphs. The fundamental principle of Ramsey theory can be summarized by the phrase "complete disorder is impossible."</p>
+
+            <h3>History</h3>
+            <p>The theory is named after the British mathematician Frank P. Ramsey, who introduced it in his 1930 paper "On a Problem of Formal Logic." Ramsey's work laid the groundwork for what would become a rich area of study in combinatorics and graph theory. The field has since been expanded by numerous mathematicians and has found applications across various disciplines.</p>
+
+            <h3>Key Concepts</h3>
+            <ul>
+                <li><strong>Ramsey's Theorem:</strong> This theorem states that for any given integers \( r \) and \( k \), there exists a minimum number \( R(r, k) \) such that any graph of at least \( R(r, k) \) vertices will contain either a complete subgraph of \( r \) vertices or an independent set of \( k \) vertices.</li>
+                <li><strong>Applications:</strong> Ramsey theory has applications in various fields including computer science (particularly in algorithms and network design), social sciences (analyzing group dynamics), and even in biology (understanding genetic structures).</li>
+                <li><strong>Generalizations:</strong> The theory has been generalized to higher dimensions and other structures beyond graphs, leading to various extensions and related results.</li>
+                <li><strong>Related Theorems:</strong> Other notable results in Ramsey theory include the Erdős–Szekeres theorem, which deals with monotonic sequences, and Turán's theorem, which provides bounds on the number of edges in graphs avoiding complete subgraphs.</li>
+            </ul>
+
+            <h3>Ramsey Numbers</h3>
+            <p>The Ramsey number \( R(r, k) \) is the smallest integer \( n \) such that any red/blue coloring of the edges of the complete graph \( K_n \) will contain either a red clique of size \( r \) or a blue clique of size \( k \). In other words, \( R(r, k) \) is the minimum number of vertices in a graph where every red/blue edge coloring will result in a red clique of size \( r \) or a blue clique of size \( k \).</p>
+
+            <h3>Ramsey's Theorem (Formal Definition)</h3>
+            <p>For any positive integers \( r \) and \( k \), there exists a smallest positive integer \( R(r, k) \) such that for any red/blue coloring of the edges of the complete graph \( K_{R(r,k)} \), there is either a red clique of size \( r \) or a blue clique of size \( k \.</p>
+
+            <h3>Further Reading</h3>
+            <ul>
+                <li><a href="https://en.wikipedia.org/wiki/Ramsey_theory" target="_blank">Ramsey Theory on Wikipedia</a></li>
+                <li><a href="https://mathworld.wolfram.com/RamseyNumber.html" target="_blank">Ramsey Numbers on Wolfram MathWorld</a></li>
+                <li><a href="https://www.ams.org/publications/journals/notices/201904/rnoti-p470.pdf" target="_blank">An Introduction to Ramsey Theory (PDF)</a></li>
+                <!-- Add more links as needed -->
+            </ul>
+        </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
